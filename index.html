@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Quick Change — a superhero puzzle hunt. Solve it to find out where Peter's 47th birthday party is.">
+  <meta name="color-scheme" content="light">
+
+  <title>Quick Change — Peter Turns 47</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ══════════ emblem sprite (ported from tools/make_puzzle.py) ══════════ -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <mask id="m-crescent" maskUnits="userSpaceOnUse" x="-1.1" y="-1.1" width="2.2" height="2.2">
+        <rect x="-1.1" y="-1.1" width="2.2" height="2.2" fill="#fff"/>
+        <circle cx=".4" cy="-.25" r=".75" fill="#000"/>
+      </mask>
+
+      <symbol id="em-shield" viewBox="-1.1 -1.1 2.2 2.2">
+        <g transform="scale(1,-1)">
+          <path d="M-.75.8 L.75.8 C.8,-.1 .5,-.6 0,-.95 C-.5,-.6 -.8,-.1 -.75,.8 Z" fill="currentColor"/>
+          <path d="M0,.6 L0,-.65" stroke="#fff" stroke-width=".12"/>
+        </g>
+      </symbol>
+
+      <symbol id="em-mask" viewBox="-1.1 -1.1 2.2 2.2">
+        <g transform="scale(1,-1)">
+          <path d="M-1,.15 C-.9,.65 -.3,.55 0,.3 C.3,.55 .9,.65 1,.15 C.95,-.45 .3,-.55 0,-.2 C-.3,-.55 -.95,-.45 -1,.15 Z" fill="currentColor"/>
+          <ellipse cx="-.45" cy=".02" rx=".23" ry=".2" fill="#fff"/>
+          <ellipse cx=".45" cy=".02" rx=".23" ry=".2" fill="#fff"/>
+        </g>
+      </symbol>
+
+      <symbol id="em-target" viewBox="-1.1 -1.1 2.2 2.2">
+        <circle r=".95" fill="currentColor"/>
+        <circle r=".68" fill="#fff"/>
+        <circle r=".42" fill="currentColor"/>
+        <circle r=".16" fill="#fff"/>
+      </symbol>
+
+      <symbol id="em-crescent" viewBox="-1.1 -1.1 2.2 2.2">
+        <circle r=".9" fill="currentColor" mask="url(#m-crescent)"/>
+      </symbol>
+
+      <symbol id="em-bat" viewBox="-1.1 -1.1 2.2 2.2">
+        <g transform="scale(1,-1)">
+          <path d="M-1,.25 L-.55,.45 L-.3,.3 L-.15,.5 L-.08,.32 L0,.38 L.08,.32 L.15,.5 L.3,.3 L.55,.45 L1,.25
+                   L.75,.05 L.7,-.2 L.45,-.08 L.3,-.35 L.12,-.2 L0,-.5
+                   L-.12,-.2 L-.3,-.35 L-.45,-.08 L-.7,-.2 L-.75,.05 Z" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <symbol id="em-bolt" viewBox="-1.1 -1.1 2.2 2.2">
+        <g transform="scale(1,-.95)">
+          <path d="M.25,1 L-.55,-.1 L-.05,-.1 L-.3,-1 L.55,.15 L.05,.15 L.35,1 Z" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <symbol id="em-star" viewBox="-1.1 -1.1 2.2 2.2">
+        <g transform="scale(1,-1)">
+          <path d="M0,.92 L-.247,.26 L-.951,.229 L-.399,-.21 L-.588,-.889 L0,-.5 L.588,-.889 L.399,-.21 L.951,.229 L.247,.26 Z" fill="currentColor"/>
+        </g>
+      </symbol>
+
+      <symbol id="em-diamond" viewBox="-1.1 -1.1 2.2 2.2">
+        <g transform="scale(1,-1)">
+          <path d="M-.9,.3 L-.5,.75 L.5,.75 L.9,.3 L0,-.9 Z" fill="currentColor"/>
+          <g stroke="#fff" stroke-width=".08">
+            <path d="M-.9,.3 L.9,.3"/>
+            <path d="M-.25,.3 L0,-.9"/>
+            <path d="M.25,.3 L0,-.9"/>
+          </g>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="sheet">
+
+    <!-- ══════════ header panel ══════════ -->
+    <header class="panel panel--header">
+      <div class="halftone" aria-hidden="true"></div>
+      <div class="header-text">
+        <h1 class="title">Quick Change!</h1>
+        <p class="subtitle">A Superhero Puzzle Hunt</p>
+      </div>
+      <div class="burst" aria-hidden="true">
+        <span>Location<br>Puzzle</span>
+      </div>
+    </header>
+
+    <p class="kicker">
+      <svg class="em em--inline"><use href="#em-star"/></svg>
+      Peter turns 47 &mdash; solve it, then go find it
+      <svg class="em em--inline"><use href="#em-star"/></svg>
+    </p>
+
+    <!-- ══════════ flavor ══════════ -->
+    <section class="panel panel--flavor">
+      <p>
+        <b>Captain Birthday</b> is planning a party. All of his superhero friends are changing into
+        their costumes to celebrate. Every hero ducked into a phone booth to change, but
+        <b>each came out with a little something extra</b>. Before sending out the invites,
+        Captain Birthday realized he had one last birthday superhero to add to the guest list.
+        Who was it?
+      </p>
+    </section>
+
+    <!-- ══════════ get the puzzle ══════════ -->
+    <section class="cta">
+      <a class="btn btn--primary" href="puzzle/quick-change.pdf" target="_blank" rel="noopener">
+        Get the puzzle
+      </a>
+      <p class="fine">One page. Prints on a single sheet, or read it right on your phone.</p>
+    </section>
+
+    <!-- ══════════ hints ══════════ -->
+    <section class="hints">
+      <h2 class="section-heading">Stuck?</h2>
+
+      <details class="hint">
+        <summary>
+          <svg class="em em--bullet"><use href="#em-bolt"/></svg>
+          Hint 1 &mdash; how the rows work
+        </summary>
+        <div class="hint-body">
+          <p>
+            Count the letters. Every jumble has <b>one more letter</b> than the word it's hiding.
+            Unscramble the word into the blanks, and whatever letter is left over goes in the
+            yellow box at the end of the row &mdash; that's the &ldquo;something extra&rdquo; the hero
+            came out of the phone booth with.
+          </p>
+        </div>
+      </details>
+
+      <details class="hint">
+        <summary>
+          <svg class="em em--bullet"><use href="#em-target"/></svg>
+          Hint 2 &mdash; what to do with the extras
+        </summary>
+        <div class="hint-body">
+          <p>
+            Eight rows, eight extra letters &mdash; but the final answer is longer than eight letters,
+            so some get used more than once. The little <b>emblems</b> underneath the final answer
+            boxes tell you which row each letter comes from: match the emblem to the badge at the
+            start of the row.
+          </p>
+          <p>
+            What you're building is a <b>superhero alias</b>, two words, the sort of thing a
+            newspaper would call a caped crime-fighter. And since it's a birthday party, there
+            may be dessert involved.
+          </p>
+        </div>
+      </details>
+
+      <details class="hint hint--spoiler">
+        <summary>
+          <svg class="em em--bullet"><use href="#em-diamond"/></svg>
+          Just tell me <span class="spoiler-tag">spoiler</span>
+        </summary>
+        <div class="hint-body">
+          <p>Alright, hero. The answer is:</p>
+          <p class="spoiler-answer">Caked Crusader</p>
+          <p class="fine">
+            Full worked solution:
+            <a href="puzzle/quick-change-answer-key.pdf" target="_blank" rel="noopener">answer key (PDF)</a>.
+            Now go type it in &mdash; you still have to find out where the party is.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ══════════ answer ══════════ -->
+    <section class="panel panel--answer">
+      <div class="halftone halftone--pink" aria-hidden="true"></div>
+      <div class="answer-inner">
+        <h2 class="answer-heading">Who still needs an invite?</h2>
+        <form id="answer-form" autocomplete="off">
+          <label class="visually-hidden" for="solution">Your answer</label>
+          <div class="answer-row">
+            <input type="text" id="solution" name="solution" placeholder="Type your answer" spellcheck="false">
+            <button type="submit" class="btn btn--primary">Check</button>
+          </div>
+        </form>
+        <div id="response" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ══════════ footer ══════════ -->
+    <footer class="footer">
+      <div class="emblem-row" aria-hidden="true">
+        <svg class="em"><use href="#em-shield"/></svg>
+        <svg class="em"><use href="#em-mask"/></svg>
+        <svg class="em"><use href="#em-target"/></svg>
+        <svg class="em"><use href="#em-crescent"/></svg>
+        <svg class="em"><use href="#em-bat"/></svg>
+        <svg class="em"><use href="#em-bolt"/></svg>
+        <svg class="em"><use href="#em-star"/></svg>
+        <svg class="em"><use href="#em-diamond"/></svg>
+      </div>
+      <p class="fine">Peter turns 47 &middot; 2026 &middot; solve it, then go find it.</p>
+    </footer>
+
+  </div>
+
+<script>
+// ──────────────────── FILL THESE IN ────────────────────
+const PARTY = {
+  venue:   "TODO_VENUE",                    // e.g. "Empirical Brewery"
+  address: "TODO_ADDRESS",                  // e.g. "1801 W. Foster Ave, Chicago 60640"
+  date:    "TODO_DATE",                     // e.g. "Saturday, October 24th"
+  time:    "TODO_TIME",                     // e.g. "3:00pm"
+  details: [                                // shown under the venue once solved
+    "TODO_PARKING",                         // e.g. "Street parking is easy on Foster."
+    "TODO_WHAT_TO_BRING",                   // e.g. "Pizza's on me, beers are on you."
+    "TODO_PLUS_ONES",                       // e.g. "Partners welcome, kids welcome."
+  ],
+};
+
+const ANSWER = "caked crusader";
+// ───────────────────────────────────────────────────────
+
+// "The Caked Crusader!" / "cakedcrusader" / "Caked Crusader" all pass
+const norm = s => s.toLowerCase().replace(/[^a-z]/g, "").replace(/^the/, "");
+
+const form     = document.getElementById("answer-form");
+const input    = document.getElementById("solution");
+const response = document.getElementById("response");
+
+const esc = s => String(s).replace(/[&<>"']/g, c => (
+  { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]
+));
+
+function win() {
+  const details = PARTY.details
+    .filter(Boolean)
+    .map(d => `<li>${esc(d)}</li>`)
+    .join("");
+
+  response.className = "result result--win";
+  response.innerHTML = `
+    <div class="result-bam">Bam!</div>
+    <p class="result-lead">You found it. Here's where we're celebrating:</p>
+    <p class="result-venue">${esc(PARTY.venue)}</p>
+    <p class="result-address">${esc(PARTY.address)}</p>
+    <p class="result-when">${esc(PARTY.date)} at ${esc(PARTY.time)}</p>
+    ${details ? `<ul class="result-details">${details}</ul>` : ""}
+    <p class="result-sign">Can&rsquo;t wait. &mdash;Peter</p>`;
+}
+
+function miss() {
+  response.className = "result result--miss";
+  response.innerHTML = `
+    <p class="result-lead">Hmmm &mdash; that&rsquo;s not quite right.</p>
+    <p class="fine">Back to the phone booth. (There are hints up above.)</p>`;
+}
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const guess = norm(input.value);
+  if (!guess) return;
+  guess === norm(ANSWER) ? win() : miss();
+  response.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+</script>
+
+</body>
+</html>
