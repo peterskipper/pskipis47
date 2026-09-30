@@ -101,18 +101,17 @@
 
     <p class="kicker">
       <svg class="em em--inline"><use href="#em-star"/></svg>
-      Peter turns 47 &mdash; solve it, then go find it
+      Peter turns 47 &mdash; solve it, then come celebrate with us
       <svg class="em em--inline"><use href="#em-star"/></svg>
     </p>
 
     <!-- ══════════ flavor ══════════ -->
     <section class="panel panel--flavor">
       <p>
-        <b>Captain Birthday</b> is planning a party. All of his superhero friends are changing into
-        their costumes to celebrate. Every hero ducked into a phone booth to change, but
-        <b>each came out with a little something extra</b>. Before sending out the invites,
-        Captain Birthday realized he had one last birthday superhero to add to the guest list.
-        Who was it?
+        Click on the button below to get the location puzzle. Enter your answer 
+        in the box at the bottom of this page to learn where the party will be! Then come celebrate with us on the day, 
+        we'll be hanging out and solving a Super Hero puzzle hunt with Sandy 
+        over at <a href=https://mysteryleague.com/ target="_blank">Mystery League</a>. 
       </p>
     </section>
 
@@ -216,14 +215,14 @@
 <script>
 // ──────────────────── FILL THESE IN ────────────────────
 const PARTY = {
-  venue:   "TODO_VENUE",                    // e.g. "Empirical Brewery"
-  address: "TODO_ADDRESS",                  // e.g. "1801 W. Foster Ave, Chicago 60640"
-  date:    "TODO_DATE",                     // e.g. "Saturday, October 24th"
-  time:    "TODO_TIME",                     // e.g. "3:00pm"
+  venue:   "Spiteful Brewing",                    // e.g. "Empirical Brewery"
+  address: "2024 W Balmoral Ave., Chicago 60625",                  // e.g. "1801 W. Foster Ave, Chicago 60640"
+  date:    "Saturday, Nov 7th",                     
+  time:    "2:00 PM",                     
   details: [                                // shown under the venue once solved
-    "TODO_PARKING",                         // e.g. "Street parking is easy on Foster."
-    "TODO_WHAT_TO_BRING",                   // e.g. "Pizza's on me, beers are on you."
-    "TODO_PLUS_ONES",                       // e.g. "Partners welcome, kids welcome."
+    "Sandy at Mystery League will be running a puzzle hunt! Please show up on time so the activity can start.",       
+    "I'll have a few snacks to share.",                   // e.g. "Pizza's on me, beers are on you."
+    "Partners welcome, Kids welcome. But I do need a headcount, so tell me how many you're bringing as soon as you can.",                       // e.g. "Partners welcome, kids welcome."
   ],
 };
 
@@ -255,7 +254,7 @@ function win() {
     <p class="result-address">${esc(PARTY.address)}</p>
     <p class="result-when">${esc(PARTY.date)} at ${esc(PARTY.time)}</p>
     ${details ? `<ul class="result-details">${details}</ul>` : ""}
-    <p class="result-sign">Can&rsquo;t wait. &mdash;Peter</p>`;
+    <p class="result-sign">Can&rsquo;t wait to see you!  &mdash;Peter</p>`;
 }
 
 function miss() {
